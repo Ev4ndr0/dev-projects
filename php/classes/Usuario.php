@@ -39,11 +39,11 @@ class Usuario {
     public function logarUsuario()
     {
         $db = new DB();
-        $usuario = $db->protegerString($this->login);
+        $user = $db->protegerString($this->login);
         $senha = md5($db->protegerString($this->senha));
        
-        $sql = sprintf("SELECT id, usuario FROM usuarios WHERE usuario = '%s' AND senha = '%s'", $usuario, $senha);
-        $usuario = $db->query($sql);
+        $sql = sprintf("SELECT id, usuario FROM usuarios WHERE usuario = '%s' AND senha = '%s'", $user, $senha);
+        $usuario = $db->query($sql, true);
         if($usuario){
             # Guarda o usuário na SESSÃO do PHP
             $_SESSION['usuario_logado'] = $usuario;
@@ -80,7 +80,7 @@ class Usuario {
      * @return string       Nome do usuário logado 
      */
     public static function getUsuarioLogado(){
-        return $_SESSION['usuario_logado'][0]['usuario'];
+        return $_SESSION['usuario_logado']['usuario'];
     }
     
     /**

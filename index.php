@@ -34,6 +34,8 @@ require_once('php/includes/cabecalho.php');
 
 <?php if (Usuario::isUsuarioLogado()) : ?>
 
+ <?php #custom_print($_SESSION) ?>
+
 <h1>Bem-vindo!</h1>
 <div class="alert alert-success">
     Olá, você está logado como <strong><?= Usuario::getUsuarioLogado() ?></strong><br>

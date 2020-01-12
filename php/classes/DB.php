@@ -27,7 +27,7 @@
                 return $resultados->fetch_assoc();
             }
             else {
-                return $resultados->fetch_all(MYSQLI_ASSOC);
+                return $resultados->fetch_all(MYSQLI_ASSOC);                
             }
         }
 
