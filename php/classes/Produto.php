@@ -166,7 +166,7 @@ public function salvarProduto()
             VALUES('%s', %.2f, '%s', %d, %d, '%s','%s')",
             $this->nome,
             $this->preco,
-            $this->desricao,
+            $this->descricao,
             $this->categoria->getId(),
             $this->is_usado,
             $isbn,

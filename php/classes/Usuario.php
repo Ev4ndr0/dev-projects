@@ -80,7 +80,7 @@ class Usuario {
      * @return string       Nome do usuário logado 
      */
     public static function getUsuarioLogado(){
-        return $_SESSION['usuario_logado']['usuario'];
+        return $_SESSION['usuario_logado'][0]['usuario'];
     }
     
     /**
